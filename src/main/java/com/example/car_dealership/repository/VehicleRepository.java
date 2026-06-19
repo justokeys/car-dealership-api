@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle , Integer> {
 
-    List<Vehicle> findByPriceLessThanEqual(BigDecimal minPrice);
+    List<Vehicle>  findByPriceLessThanEqual(BigDecimal minPrice);
 
-    List<Vehicle> findByPriceGreaterThanEqua(BigDecimal maxPrice);
+    List<Vehicle> findByPriceGreaterThanEqual(BigDecimal maxPrice);
 
     List<Vehicle> findByMake(String make);
 

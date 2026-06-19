@@ -22,29 +22,37 @@ public class VehicleService {
         return vehicleRepository.findById(id).orElseThrow(() -> new RuntimeException("Vehicle not found"));
     }
     public List<Vehicle> getVehicleByMinPrice(BigDecimal minPrice){
-        return vehicleRepository.findVehicleByMinPrice(minPrice);
+        return vehicleRepository.findByPriceLessThanEqual(minPrice);
     }
 
     public List<Vehicle> getVehicleByMaxPrice(BigDecimal maxPrice){
-        return vehicleRepository.findVehicleByMaxPrice(maxPrice);
+        return vehicleRepository.findByPriceGreaterThanEqual(maxPrice);
     }
 
     public List<Vehicle> getVehicleByMaxYear(int maxYear){
-        return vehicleRepository.findVehicleByMaxYear(maxYear);
+        return vehicleRepository.findByYearGreaterThanEqual(maxYear);
     }
 
     public List<Vehicle> getVehicleByMinYear(int minYear){
-        return vehicleRepository.findVehicleByMinYear(minYear);
+        return vehicleRepository.findByYearLessThanEqual(minYear);
     }
 
     public List<Vehicle> getVehicleByColor(String color){
-        return vehicleRepository.findVehicleByColor(color);
+        return vehicleRepository.findByColor(color);
     }
     public List<Vehicle> getVehicleByMake(String make){
-        return vehicleRepository.findVehicleByMake(make);
+        return vehicleRepository.findByMake(make);
     }
 
     public List<Vehicle> getVehicleByModel(String model){
-        return vehicleRepository.findVehicleByModel(model);
+        return vehicleRepository.findByModel(model);
+    }
+
+    public List<Vehicle> getVehicleByMaxMiles(int maxMiles){
+        return vehicleRepository.findByMilesGreaterThanEqual(maxMiles);
+    }
+
+    public List<Vehicle> getVehicleByMinMiles(int minMiles){
+        return vehicleRepository.findVehicleByMinMiles(minMiles);
     }
 }
