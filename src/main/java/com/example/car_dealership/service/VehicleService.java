@@ -55,4 +55,8 @@ public class VehicleService {
     public List<Vehicle> getVehicleByMinMiles(int minMiles){
         return vehicleRepository.findVehicleByMinMiles(minMiles);
     }
+
+    public Vehicle createVehicle(Vehicle vehicle){
+        return vehicleRepository.save(vehicle);
+    }
 }
