@@ -20,5 +20,6 @@ public class Vehicle {
     private String vehicleColor;
     private BigDecimal price;
     private int year;
+    private int miles;
 
 }
